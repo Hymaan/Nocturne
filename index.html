@@ -1,0 +1,2057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>NOCTURNE — Night Photography Studio &amp; Fine‑Art Editions</title>
+<meta name="description" content="NOCTURNE is an independent night-photography studio and fine-art print shop — long-exposure cityscapes, portraits, and motion, available as limited, numbered editions." />
+<meta name="theme-color" content="#06070a" />
+<meta property="og:title" content="NOCTURNE — Night Photography Studio & Editions" />
+<meta property="og:description" content="Long-exposure cityscapes, portraits, and motion — shot after dark, printed as limited editions." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='%2306070a' stroke='%23f3f5fa' stroke-width='1.2'/%3E%3Ccircle cx='12' cy='12' r='3.4' fill='%235fe8ff'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===================================================================
+   NOCTURNE — Fine-art night photography studio & editions
+   =================================================================== */
+
+:root{
+  /* --- color tokens --- */
+  --ink:        #06070a;
+  --ink-soft:   #0a0c12;
+  --surface:    rgba(255,255,255,0.035);
+  --surface-2:  rgba(255,255,255,0.065);
+  --border:     rgba(255,255,255,0.09);
+  --border-soft:rgba(255,255,255,0.05);
+  --frost:      #f3f5fa;
+  --mist:       #8e96aa;
+  --mist-dim:   #565d6f;
+  --cyan:       #5fe8ff;
+  --violet:     #b48bff;
+  --champagne:  #e8c77e;
+  --grad-aurora: linear-gradient(120deg, var(--cyan), var(--violet) 65%);
+  --grad-champagne: linear-gradient(120deg, var(--champagne), #f3dba9);
+
+  /* --- type --- */
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* --- shape / motion --- */
+  --ease-out: cubic-bezier(.16,1,.3,1);
+  --ease-in-out: cubic-bezier(.65,0,.35,1);
+  --r-sm: 6px;
+  --r-md: 14px;
+  --r-lg: 28px;
+
+  --nav-h: 88px;
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: auto; }
+
+html, body{
+  background: var(--ink);
+  color: var(--frost);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body{
+  margin:0;
+  overflow-x: hidden;
+}
+
+img, svg{ display:block; max-width:100%; }
+a{ color: inherit; text-decoration:none; }
+button{ font-family: inherit; background:none; border:none; color:inherit; }
+ul{ margin:0; padding:0; list-style:none; }
+h1,h2,h3,h4,p{ margin:0; }
+
+::selection{ background: var(--violet); color: var(--ink); }
+
+::-webkit-scrollbar{ width:10px; }
+::-webkit-scrollbar-track{ background: var(--ink); }
+::-webkit-scrollbar-thumb{ background: #1b1e29; border-radius: 10px; border: 2px solid var(--ink); }
+::-webkit-scrollbar-thumb:hover{ background: #2a2e3d; }
+
+:focus-visible{
+  outline: 1.5px solid var(--cyan);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.skip-link{
+  position:absolute; left:-9999px; top:0;
+  background: var(--frost); color: var(--ink);
+  padding: 10px 18px; z-index: 999; border-radius: 0 0 8px 0;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em;
+}
+.skip-link:focus{ left:0; }
+
+/* ===================== layout helpers ===================== */
+.wrap{
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 64px);
+}
+.section{ position: relative; padding: clamp(90px,12vw,160px) 0; }
+.section-head{
+  display:flex; align-items:flex-end; justify-content:space-between;
+  gap: 32px; margin-bottom: clamp(40px,6vw,80px); flex-wrap: wrap;
+}
+.eyebrow{
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--mist);
+  display:inline-flex; align-items:center; gap:10px;
+}
+.eyebrow::before{
+  content:''; width:6px; height:6px; border-radius:50%;
+  background: var(--grad-aurora);
+  box-shadow: 0 0 10px var(--cyan);
+}
+.exif{
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .05em;
+  color: var(--mist-dim);
+}
+
+.title-xl{
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -.01em;
+  line-height: .98;
+  font-size: clamp(40px, 6.4vw, 92px);
+}
+.title-lg{
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.02;
+  font-size: clamp(32px, 4.4vw, 58px);
+  letter-spacing: -.01em;
+}
+.title-md{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(22px, 2.4vw, 30px);
+  line-height: 1.15;
+}
+em{
+  font-style: italic;
+  font-family: var(--font-display);
+  background: var(--grad-aurora);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.lede{
+  font-size: clamp(15px,1.6vw,18px);
+  line-height: 1.7;
+  color: var(--mist);
+  max-width: 480px;
+}
+
+.btn{
+  position: relative;
+  display:inline-flex; align-items:center; justify-content:center;
+  gap: 10px;
+  height: 56px;
+  padding: 0 30px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  isolation: isolate;
+  transition: transform .35s var(--ease-out);
+}
+.btn span{ position:relative; z-index:2; }
+.btn-primary{
+  background: var(--frost);
+  color: var(--ink);
+  overflow:hidden;
+}
+.btn-primary .liquid{
+  position:absolute; inset:0; z-index:1;
+  background: var(--grad-aurora);
+  transform: translateY(101%);
+  transition: transform .5s var(--ease-in-out);
+  border-radius: inherit;
+}
+.btn-primary:hover .liquid{ transform: translateY(0%); }
+.btn-primary:hover span{ color: var(--ink); }
+
+.btn-ghost{
+  border: 1px solid var(--border);
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  color: var(--frost);
+}
+.btn-ghost:hover{ background: var(--surface-2); border-color: var(--border-soft); }
+
+.btn-sm{ height:44px; padding:0 22px; font-size:11px; }
+
+.pill{
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--mist);
+  transition: all .4s var(--ease-out);
+  white-space: nowrap;
+}
+.pill.is-active{
+  color: var(--ink);
+  background: var(--frost);
+  border-color: var(--frost);
+}
+
+.glass{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+}
+
+/* film grain — brand texture, used sparingly */
+.grain{
+  position: fixed; inset:0; z-index: 998; pointer-events:none;
+  opacity: .035; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-size: 160px 160px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}
+
+
+/* ===================== loader ===================== */
+.loader{
+  position: fixed; inset:0; z-index: 10000;
+  background: var(--ink);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap: 28px;
+}
+.loader-mark{ width: 86px; height:86px; position:relative; }
+.loader-mark svg{ width:100%; height:100%; }
+.loader-blade{
+  transform-origin: 50px 50px;
+  transition: transform 1.1s var(--ease-in-out);
+}
+.loader-bar{
+  width: 220px; height:1px; background: var(--border); position:relative; overflow:hidden;
+}
+.loader-bar i{
+  position:absolute; left:0; top:0; bottom:0; width:0%;
+  background: var(--grad-aurora);
+}
+.loader-pct{
+  font-family: var(--font-mono); font-size:11px; color:var(--mist); letter-spacing:.15em;
+}
+.loader.is-done{
+  transition: opacity .8s var(--ease-out), visibility .8s;
+  opacity:0; visibility:hidden;
+}
+
+/* ===================== nav ===================== */
+.nav{
+  position: fixed; top:0; left:0; right:0; z-index: 500;
+  height: var(--nav-h);
+  display:flex; align-items:center;
+  transition: background .4s var(--ease-out), border-color .4s var(--ease-out), height .4s var(--ease-out);
+  border-bottom: 1px solid transparent;
+}
+.nav.is-scrolled{
+  background: rgba(6,7,10,.72);
+  backdrop-filter: blur(18px);
+  border-bottom-color: var(--border-soft);
+  height: 76px;
+}
+.nav .wrap{ display:flex; align-items:center; justify-content:space-between; width:100%; }
+.brand{ display:flex; align-items:center; gap:10px; font-family: var(--font-display); font-size: 20px; letter-spacing:.01em; }
+.brand-mark{ width:22px; height:22px; }
+.brand-mark circle{ stroke: var(--frost); }
+.brand small{ display:block; font-family: var(--font-mono); font-size:9px; letter-spacing:.2em; color: var(--mist); margin-top:1px; }
+
+.nav-links{ display:flex; align-items:center; gap: 38px; }
+.nav-link{
+  position: relative; font-size: 13px; letter-spacing:.02em; color: var(--mist);
+  transition: color .3s var(--ease-out); padding: 6px 0;
+}
+.nav-link::after{
+  content:''; position:absolute; left:0; right:100%; bottom:0; height:1px;
+  background: var(--grad-aurora); transition: right .35s var(--ease-out);
+}
+.nav-link:hover{ color: var(--frost); }
+.nav-link:hover::after{ right:0; }
+
+.nav-actions{ display:flex; align-items:center; gap:18px; }
+.cart-btn{ position:relative; width:42px; height:42px; border-radius:50%; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; transition: background .3s; }
+.cart-btn:hover{ background: var(--surface-2); }
+.cart-count{
+  position:absolute; top:-4px; right:-4px; min-width:18px; height:18px; border-radius:50%;
+  background: var(--champagne); color: var(--ink); font-family: var(--font-mono); font-size:10px;
+  display:flex; align-items:center; justify-content:center; font-weight:700;
+}
+.burger{ display:none; width:42px; height:42px; border-radius:50%; border:1px solid var(--border); align-items:center; justify-content:center; flex-direction:column; gap:4px; }
+.burger i{ width:16px; height:1px; background: var(--frost); transition: all .3s; }
+
+.mobile-menu{
+  position:fixed; inset:0; z-index:480; background: var(--ink-soft);
+  display:flex; flex-direction:column; justify-content:center; gap:22px; padding: 0 32px;
+  transform: translateY(-100%); transition: transform .55s var(--ease-in-out);
+}
+.mobile-menu.is-open{ transform: translateY(0); }
+.mobile-menu a{ font-family: var(--font-display); font-size: 38px; }
+
+@media (max-width: 880px){
+  .nav-links{ display:none; }
+  .burger{ display:flex; }
+}
+
+/* ===================== hero ===================== */
+.hero{
+  position: relative;
+  min-height: 100vh;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  overflow: hidden;
+  padding-bottom: clamp(40px,6vw,72px);
+}
+.hero-canvas{ position:absolute; inset:0; z-index:0; }
+.hero-veil{
+  position:absolute; inset:0; z-index:1;
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgba(95,232,255,.07), transparent 60%),
+    radial-gradient(50% 40% at 85% 90%, rgba(180,139,255,.08), transparent 60%),
+    linear-gradient(180deg, rgba(6,7,10,.2) 0%, rgba(6,7,10,.55) 65%, var(--ink) 100%);
+}
+.hero-content{ position:relative; z-index:2; }
+.hero-top{
+  display:flex; justify-content:space-between; align-items:flex-start;
+  padding-top: calc(var(--nav-h) + 40px);
+}
+.hero-top .exif{ writing-mode: vertical-rl; text-orientation: mixed; }
+.hero-headline{ overflow:hidden; }
+.hero-headline .line{ overflow:hidden; }
+.hero-headline .line span{ display:block; transform: translateY(110%); }
+.hero-sub-row{
+  display:flex; justify-content:space-between; align-items:flex-end; gap: 40px;
+  margin-top: 36px; flex-wrap: wrap;
+}
+.hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
+.scroll-cue{
+  display:flex; flex-direction:column; align-items:center; gap:10px;
+  position:absolute; right: clamp(20px,5vw,64px); bottom: 36px; z-index:2;
+}
+.scroll-cue .line{ width:1px; height:48px; background: linear-gradient(var(--frost), transparent); overflow:hidden; position:relative; }
+.scroll-cue .line i{ position:absolute; top:-100%; left:0; width:100%; height:100%; background: var(--cyan); animation: cueFall 2.2s var(--ease-in-out) infinite; }
+@keyframes cueFall{ 0%{ top:-100%; } 60%{ top:100%; } 100%{ top:100%; } }
+.scroll-cue span{ font-family: var(--font-mono); font-size:10px; letter-spacing:.25em; color: var(--mist); writing-mode: vertical-rl; }
+
+/* ===================== marquee ===================== */
+.marquee-strip{
+  border-top:1px solid var(--border-soft); border-bottom:1px solid var(--border-soft);
+  padding: 26px 0; overflow:hidden; white-space:nowrap; position:relative;
+}
+.marquee-track{ display:inline-flex; gap: 60px; animation: marquee 32s linear infinite; }
+.marquee-track span{
+  font-family: var(--font-display); font-style:italic; font-size: clamp(20px,2.6vw,32px);
+  color: var(--mist-dim); display:inline-flex; align-items:center; gap:60px;
+}
+.marquee-track span b{ color: var(--frost); font-style:normal; font-weight:600; }
+.marquee-track span::after{ content:'◆'; font-size:10px; color: var(--violet); margin-left:60px; }
+@keyframes marquee{ from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
+
+/* ===================== gallery ===================== */
+.filter-row{ display:flex; gap:10px; flex-wrap:wrap; }
+.gallery-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+.g-item{
+  position: relative;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  opacity:0; transform: translateY(40px);
+  transition: opacity 1s var(--ease-out), transform 1s var(--ease-out), border-color .4s;
+}
+.g-item.is-visible{ opacity:1; transform: translateY(0); }
+.g-item.is-hidden{ display:none; }
+.g-item:nth-child(6n+1){ grid-row: span 2; }
+.g-item:nth-child(6n+4){ grid-row: span 2; }
+.g-tilt{
+  position:relative; width:100%; height:100%;
+  transform-style: preserve-3d; will-change: transform;
+  transition: transform .15s var(--ease-out);
+}
+.g-photo{
+  position:absolute; inset:0;
+  background-size: cover; background-position:center;
+  transform: scale(1.08); transition: transform .8s var(--ease-out);
+}
+.g-item:hover .g-photo{ transform: scale(1.16); }
+.g-item:hover{ border-color: var(--border); }
+.g-shade{
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(6,7,10,0) 35%, rgba(6,7,10,.92) 100%);
+}
+.g-meta{
+  position:absolute; left:0; right:0; bottom:0; padding: 18px 20px;
+  display:flex; flex-direction:column; gap:6px;
+  transform: translateY(8px); opacity:.92;
+  transition: transform .4s var(--ease-out);
+}
+.g-item:hover .g-meta{ transform: translateY(0); }
+.g-cat{ font-family: var(--font-mono); font-size:10px; letter-spacing:.18em; color: var(--cyan); text-transform:uppercase; }
+.g-title{ font-family: var(--font-display); font-size: clamp(18px,2vw,24px); }
+.g-exif{
+  display:flex; gap:12px; font-family: var(--font-mono); font-size:10px; color: var(--mist);
+  opacity:0; max-height:0; transition: opacity .4s var(--ease-out), max-height .4s var(--ease-out);
+}
+.g-item:hover .g-exif{ opacity:1; max-height:20px; }
+.g-frame-corner{ position:absolute; width:18px; height:18px; border: 1px solid rgba(255,255,255,.35); opacity:0; transition: opacity .4s; }
+.g-item:hover .g-frame-corner{ opacity:1; }
+.g-frame-corner.tl{ top:14px; left:14px; border-right:none; border-bottom:none; }
+.g-frame-corner.tr{ top:14px; right:14px; border-left:none; border-bottom:none; }
+.g-aspect{ aspect-ratio: 4/5; }
+.g-item:nth-child(6n+1) .g-aspect, .g-item:nth-child(6n+4) .g-aspect{ aspect-ratio: 4/5.8; }
+
+.grid-skeleton{ display:grid; grid-template-columns: repeat(4,1fr); gap:22px; margin-top:22px; }
+.skel{ aspect-ratio:4/5; border-radius: var(--r-md); background: linear-gradient(100deg, var(--surface) 30%, var(--surface-2) 50%, var(--surface) 70%); background-size: 200% 100%; animation: shimmer 1.6s infinite; }
+@keyframes shimmer{ from{ background-position: 200% 0; } to{ background-position: -200% 0; } }
+
+.gallery-footer{ display:flex; justify-content:center; margin-top: 56px; }
+
+@media (max-width: 1100px){ .gallery-grid, .grid-skeleton{ grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 620px){
+  .gallery-grid, .grid-skeleton{ grid-template-columns: 1fr; }
+  .g-item:nth-child(6n+1), .g-item:nth-child(6n+4){ grid-row: span 1; }
+}
+
+/* ===================== lightbox ===================== */
+.lightbox{
+  position: fixed; inset:0; z-index: 2000;
+  background: rgba(5,6,9,.88);
+  backdrop-filter: blur(10px);
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; visibility:hidden; transition: opacity .5s var(--ease-out), visibility .5s;
+}
+.lightbox.is-open{ opacity:1; visibility:visible; }
+.lb-stage{ position:relative; width: min(86vw, 1100px); display:grid; grid-template-columns: 1.5fr 1fr; gap: 0; max-height:84vh; }
+.lb-photo{
+  position:relative; border-radius: var(--r-md) 0 0 var(--r-md); overflow:hidden;
+  background-size:cover; background-position:center;
+  transform: scale(.94); opacity:0; transition: transform .6s var(--ease-out), opacity .6s var(--ease-out);
+}
+.lightbox.is-open .lb-photo{ transform: scale(1); opacity:1; }
+.lb-info{
+  background: var(--ink-soft); border:1px solid var(--border); border-left:none;
+  border-radius: 0 var(--r-md) var(--r-md) 0; padding: 40px 36px; display:flex; flex-direction:column; gap:22px;
+}
+.lb-info .g-cat{ }
+.lb-exif-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; padding-top:16px; border-top:1px solid var(--border-soft); }
+.lb-exif-grid div b{ display:block; font-family:var(--font-mono); font-size:9px; letter-spacing:.15em; color:var(--mist-dim); text-transform:uppercase; margin-bottom:4px; }
+.lb-exif-grid div span{ font-family: var(--font-mono); font-size:13px; color: var(--frost); }
+.lb-nav{ display:flex; gap:10px; margin-top:auto; }
+.lb-close{
+  position:absolute; top:-52px; right:0; width:40px; height:40px; border-radius:50%;
+  border:1px solid var(--border); display:flex; align-items:center; justify-content:center;
+}
+.lb-arrow{
+  position:absolute; top:50%; transform: translateY(-50%);
+  width:50px; height:50px; border-radius:50%; border:1px solid var(--border); background: rgba(6,7,10,.5);
+  display:flex; align-items:center; justify-content:center; z-index:5;
+}
+.lb-arrow.prev{ left: -25px; } .lb-arrow.next{ right:-25px; }
+@media (max-width: 860px){
+  .lb-stage{ grid-template-columns: 1fr; width: 92vw; max-height:90vh; overflow:auto; }
+  .lb-photo{ border-radius: var(--r-md) var(--r-md) 0 0; aspect-ratio: 4/3; }
+  .lb-info{ border-radius: 0 0 var(--r-md) var(--r-md); border-left:1px solid var(--border); border-top:none; }
+  .lb-arrow{ display:none; }
+}
+
+/* ===================== process ===================== */
+.process{ position: relative; }
+.process-scroll{ position: relative; height: 260vh; }
+.process-pin{ position: sticky; top:0; height:100vh; display:flex; align-items:center; overflow:hidden; }
+.process-row{ display:grid; grid-template-columns: .9fr 1.1fr; gap: 60px; width:100%; align-items:center; }
+.process-steps{ display:flex; flex-direction:column; }
+.p-step{
+  display:flex; gap:22px; padding: 22px 0; border-top:1px solid var(--border-soft);
+  cursor: pointer; opacity:.4; transition: opacity .4s;
+}
+.p-step:last-child{ border-bottom:1px solid var(--border-soft); }
+.p-step.is-active{ opacity:1; }
+.p-num{ font-family: var(--font-mono); font-size:12px; color: var(--mist-dim); padding-top:4px; }
+.p-step.is-active .p-num{ color: var(--cyan); }
+.p-body h3{ font-family: var(--font-display); font-size: clamp(20px,2.2vw,28px); margin-bottom:8px; }
+.p-body p{ color: var(--mist); font-size:14px; line-height:1.7; max-width:380px; max-height:0; overflow:hidden; transition: max-height .5s var(--ease-out); }
+.p-step.is-active .p-body p{ max-height: 120px; }
+.process-visual{ position:relative; aspect-ratio: 4/4.4; border-radius: var(--r-lg); overflow:hidden; border:1px solid var(--border); }
+.process-visual .g-photo{ transition: opacity .6s var(--ease-out); position:absolute; inset:0; opacity:0; transform:scale(1); }
+.process-visual .g-photo.is-active{ opacity:1; }
+
+@media (max-width: 900px){
+  .process-scroll{ height:auto; }
+  .process-pin{ position:static; height:auto; padding: 40px 0; }
+  .process-row{ grid-template-columns:1fr; gap:32px; }
+  .process-visual{ order:-1; }
+}
+
+/* ===================== store ===================== */
+.store-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 26px; }
+.product{
+  border-radius: var(--r-md); overflow:hidden; border:1px solid var(--border-soft);
+  background: var(--ink-soft);
+  opacity:0; transform: translateY(40px);
+  transition: opacity .9s var(--ease-out), transform .9s var(--ease-out), border-color .3s;
+}
+.product.is-visible{ opacity:1; transform:translateY(0); }
+.product:hover{ border-color: var(--border); }
+.product-media{ position:relative; aspect-ratio: 4/5; overflow:hidden; }
+.product-media .g-photo{ transition: transform 1s var(--ease-out), opacity .7s; }
+.product-media .g-photo.alt{ opacity:0; }
+.product:hover .product-media .g-photo.base{ opacity:0; }
+.product:hover .product-media .g-photo.alt{ opacity:1; transform: scale(1.08); }
+.product-edition{
+  position:absolute; top:14px; left:14px; font-family: var(--font-mono); font-size:9px;
+  letter-spacing:.12em; color: var(--ink); background: var(--champagne); padding:5px 10px; border-radius:999px;
+}
+.product-quick{
+  position:absolute; bottom:14px; left:14px; right:14px;
+  display:flex; gap:8px; transform: translateY(60px); opacity:0;
+  transition: transform .4s var(--ease-out), opacity .4s var(--ease-out);
+}
+.product:hover .product-quick{ transform: translateY(0); opacity:1; }
+.product-body{ padding: 20px 22px 24px; display:flex; flex-direction:column; gap:14px; }
+.product-row{ display:flex; justify-content:space-between; align-items:baseline; gap:10px; }
+.product-row h3{ font-family: var(--font-display); font-size:19px; }
+.product-price{ font-family: var(--font-mono); font-size:14px; color: var(--champagne); }
+.product-desc{ font-size:12.5px; color: var(--mist); line-height:1.6; }
+.opt-row{ display:flex; gap:8px; flex-wrap:wrap; }
+.opt{
+  font-family: var(--font-mono); font-size:10.5px; letter-spacing:.05em; padding:7px 12px;
+  border-radius:8px; border:1px solid var(--border); color: var(--mist); transition: all .3s;
+}
+.opt.is-selected{ color: var(--ink); background: var(--frost); border-color: var(--frost); }
+.add-cart{
+  margin-top:6px; width:100%; height:48px; border-radius:10px; border:1px solid var(--border);
+  font-family: var(--font-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+  position:relative; overflow:hidden; background: var(--surface);
+}
+.add-cart .liquid{ position:absolute; inset:0; background: var(--grad-aurora); transform: translateX(-101%); transition: transform .5s var(--ease-in-out); z-index:0; }
+.add-cart:hover .liquid{ transform: translateX(0); }
+.add-cart span{ position:relative; z-index:1; }
+.add-cart:hover span{ color: var(--ink); }
+.add-cart.is-added span::after{ content:' ✓ Added'; }
+
+@media (max-width: 1024px){ .store-grid{ grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 620px){ .store-grid{ grid-template-columns: 1fr; } }
+
+/* ===================== cart drawer ===================== */
+.cart-overlay{
+  position:fixed; inset:0; z-index:2100; background: rgba(5,6,9,.6);
+  opacity:0; visibility:hidden; transition: opacity .4s, visibility .4s;
+}
+.cart-overlay.is-open{ opacity:1; visibility:visible; }
+.cart-drawer{
+  position:fixed; top:0; right:0; height:100%; width: min(440px,100vw); z-index:2101;
+  background: var(--ink-soft); border-left:1px solid var(--border);
+  display:flex; flex-direction:column;
+  transform: translateX(100%); transition: transform .55s var(--ease-in-out);
+}
+.cart-drawer.is-open{ transform: translateX(0); }
+.cart-head{ display:flex; justify-content:space-between; align-items:center; padding: 26px 26px; border-bottom:1px solid var(--border-soft); }
+.cart-head h3{ font-family: var(--font-display); font-size:22px; }
+.cart-items{ flex:1; overflow-y:auto; padding: 10px 26px; display:flex; flex-direction:column; gap:18px; }
+.cart-empty{ margin:auto; text-align:center; color:var(--mist); font-size:13px; padding: 40px 0; }
+.cart-line{ display:flex; gap:14px; padding: 14px 0; border-bottom:1px solid var(--border-soft); }
+.cart-thumb{ width:64px; height:78px; border-radius:8px; flex-shrink:0; background-size:cover; background-position:center; }
+.cart-line-body{ flex:1; display:flex; flex-direction:column; gap:4px; }
+.cart-line-body h4{ font-family: var(--font-display); font-size:15px; }
+.cart-line-meta{ font-family: var(--font-mono); font-size:10px; color: var(--mist-dim); }
+.cart-line-foot{ display:flex; justify-content:space-between; align-items:center; margin-top:4px; }
+.cart-line-foot span{ font-family: var(--font-mono); font-size:13px; color: var(--champagne); }
+.cart-remove{ font-family: var(--font-mono); font-size:10px; letter-spacing:.08em; color: var(--mist-dim); text-decoration: underline; text-underline-offset:3px; }
+.cart-foot{ padding: 22px 26px 26px; border-top:1px solid var(--border-soft); display:flex; flex-direction:column; gap:14px; }
+.cart-subtotal{ display:flex; justify-content:space-between; font-family: var(--font-mono); font-size:13px; color:var(--mist); }
+.cart-subtotal b{ color: var(--frost); font-size:16px; }
+
+.checkout-modal{
+  position: fixed; inset:0; z-index: 2200; display:flex; align-items:center; justify-content:center;
+  background: rgba(5,6,9,.85); backdrop-filter: blur(8px);
+  opacity:0; visibility:hidden; transition: opacity .4s, visibility .4s;
+}
+.checkout-modal.is-open{ opacity:1; visibility:visible; }
+.checkout-card{
+  width: min(480px,90vw); border-radius: var(--r-lg); padding: 40px; position:relative;
+  transform: scale(.92) translateY(20px); transition: transform .5s var(--ease-out);
+}
+.checkout-modal.is-open .checkout-card{ transform: scale(1) translateY(0); }
+.checkout-steps{ display:flex; gap:8px; margin-bottom:28px; }
+.checkout-steps i{ flex:1; height:2px; background: var(--border); border-radius:2px; overflow:hidden; }
+.checkout-steps i b{ display:block; height:100%; width:0%; background: var(--grad-aurora); transition: width .5s var(--ease-out); }
+.co-pane{ display:none; flex-direction:column; gap:16px; }
+.co-pane.is-active{ display:flex; }
+.co-field{ display:flex; flex-direction:column; gap:6px; }
+.co-field label{ font-family: var(--font-mono); font-size:10px; letter-spacing:.1em; color: var(--mist-dim); text-transform:uppercase; }
+.co-field input{
+  height:46px; border-radius:10px; border:1px solid var(--border); background: var(--surface);
+  color: var(--frost); padding: 0 14px; font-size:14px; font-family: var(--font-body);
+}
+.co-field input:focus{ outline:none; border-color: var(--cyan); }
+.co-row{ display:flex; gap:12px; }
+.co-success{ text-align:center; padding: 20px 0; display:flex; flex-direction:column; align-items:center; gap:14px; }
+.co-success .check{ width:64px; height:64px; border-radius:50%; background: var(--grad-aurora); display:flex; align-items:center; justify-content:center; }
+.checkout-close{ position:absolute; top:18px; right:18px; width:34px; height:34px; border-radius:50%; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; }
+
+/* ===================== testimonials / press marquee ===================== */
+.press-track{ display:inline-flex; gap:0; animation: marquee 40s linear infinite; align-items:center; }
+.press-track span{
+  font-family: var(--font-mono); font-size: 12px; letter-spacing:.18em; text-transform:uppercase;
+  color: var(--mist-dim); padding: 0 36px; border-right:1px solid var(--border-soft);
+}
+.quotes-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:24px; margin-top: 56px; }
+.quote-card{
+  padding: 30px 26px; border-radius: var(--r-md); opacity:0; transform: translateY(30px);
+  transition: opacity .8s var(--ease-out), transform .8s var(--ease-out);
+}
+.quote-card.is-visible{ opacity:1; transform:translateY(0); }
+.quote-card p{ font-family: var(--font-display); font-size:17px; line-height:1.5; font-style:italic; margin-bottom:18px; }
+.quote-card .who{ display:flex; justify-content:space-between; font-family: var(--font-mono); font-size:10.5px; color:var(--mist); letter-spacing:.06em; }
+
+/* ===================== contact / footer ===================== */
+.contact{
+  position:relative; border-radius: var(--r-lg); overflow:hidden;
+  padding: clamp(60px,8vw,110px) clamp(28px,6vw,80px);
+  text-align:center; isolation:isolate;
+}
+.contact-glow{
+  position:absolute; inset:-40%; z-index:-1;
+  background: radial-gradient(closest-side, rgba(95,232,255,.18), transparent), radial-gradient(closest-side, rgba(180,139,255,.16), transparent 70%);
+  filter: blur(40px);
+  animation: blobMove 18s ease-in-out infinite alternate;
+}
+@keyframes blobMove{ 0%{ transform: translate(-6%,-4%) scale(1); } 100%{ transform: translate(6%,6%) scale(1.15); } }
+.contact h2{ max-width: 760px; margin: 0 auto 30px; }
+.contact .lede{ margin: 0 auto 36px; text-align:center; }
+.contact-actions{ display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+
+footer{ padding: 70px 0 30px; border-top:1px solid var(--border-soft); margin-top: 60px; }
+.foot-grid{ display:grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 50px; }
+.foot-brand p{ color: var(--mist); font-size:13px; line-height:1.7; max-width:280px; margin-top:14px; }
+.foot-col h5{ font-family: var(--font-mono); font-size:10px; letter-spacing:.15em; text-transform:uppercase; color: var(--mist-dim); margin-bottom: 16px; }
+.foot-col a{ display:block; font-size:13.5px; color: var(--mist); padding: 7px 0; transition: color .3s, padding-left .3s; }
+.foot-col a:hover{ color: var(--frost); padding-left:4px; }
+.foot-bottom{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; border-top:1px solid var(--border-soft); padding-top:22px; }
+.foot-bottom .exif{ }
+.social-row{ display:flex; gap:18px; }
+.social-row a{ font-family: var(--font-mono); font-size:11px; color: var(--mist); letter-spacing:.05em; }
+.social-row a:hover{ color: var(--frost); }
+
+@media (max-width: 900px){
+  .foot-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px){
+  .foot-grid{ grid-template-columns: 1fr; }
+  .quotes-grid, .store-grid{ grid-template-columns: 1fr; }
+}
+
+/* ===================== magnetic + reveal utils ===================== */
+.magnetic{ will-change: transform; }
+[data-reveal]{ opacity:0; transform: translateY(36px); transition: opacity .9s var(--ease-out), transform .9s var(--ease-out); }
+[data-reveal].is-visible{ opacity:1; transform: translateY(0); }
+[data-reveal-stagger] > *{ opacity:0; transform: translateY(24px); transition: opacity .7s var(--ease-out), transform .7s var(--ease-out); }
+[data-reveal-stagger].is-visible > *{ opacity:1; transform: translateY(0); }
+
+/* responsive type / spacing tweaks */
+@media (max-width: 1100px){
+  .store-grid{ }
+  .gallery-grid{ }
+}
+@media (max-width: 760px){
+  .hero-top{ flex-direction:column; gap:18px; }
+  .hero-top .exif{ writing-mode: horizontal-tb; }
+  :root{ --nav-h: 76px; }
+}
+
+/* ===================== generative "photograph" plates =====================
+   Stand-in imagery built from layered gradients + blend modes — no external
+   image assets, fully self-contained, tuned to read as night photography. */
+.g-photo{ position:relative; }
+.g-photo::after{ content:''; position:absolute; inset:0; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.25) 100%); }
+.ph-01{ background: radial-gradient(120% 90% at 20% 110%, #2a3550 0%, #0c0f18 55%), linear-gradient(160deg,#161c2c,#05060a); }
+.ph-02{ background: radial-gradient(90% 70% at 80% 20%, #3a2750 0%, transparent 60%), linear-gradient(200deg,#1a1224,#06070a); }
+.ph-03{ background: radial-gradient(100% 60% at 50% 100%, #234047 0%, transparent 55%), linear-gradient(180deg,#0e1620,#05070a); }
+.ph-04{ background: radial-gradient(80% 60% at 30% 0%, #4a2b2b 0%, transparent 60%), linear-gradient(200deg,#1c1414,#070605); }
+.ph-05{ background: radial-gradient(100% 80% at 70% 100%, #2f3a2a 0%, transparent 55%), linear-gradient(170deg,#121712,#05060a); }
+.ph-06{ background: radial-gradient(90% 90% at 50% 0%, #1c2f4d 0%, transparent 60%), linear-gradient(200deg,#0c111c,#05060a); }
+.ph-07{ background: radial-gradient(100% 70% at 15% 85%, #4b3a1f 0%, transparent 55%), linear-gradient(190deg,#1a140a,#06050a); }
+.ph-08{ background: radial-gradient(80% 60% at 85% 15%, #38284e 0%, transparent 60%), linear-gradient(160deg,#15101f,#05060a); }
+.ph-09{ background: radial-gradient(100% 80% at 50% 100%, #1f3a3a 0%, transparent 55%), linear-gradient(180deg,#0d1717,#050a0a); }
+.ph-10{ background: radial-gradient(90% 70% at 30% 20%, #4a2f3c 0%, transparent 60%), linear-gradient(200deg,#1a1018,#06070a); }
+.ph-11{ background: radial-gradient(100% 90% at 70% 110%, #243450 0%, transparent 55%), linear-gradient(170deg,#10131e,#05060a); }
+.ph-12{ background: radial-gradient(90% 60% at 50% 0%, #3a2418 0%, transparent 60%), linear-gradient(190deg,#160f0a,#05060a); }
+.ph-13{ background: radial-gradient(100% 80% at 20% 90%, #324a2e 0%, transparent 55%), linear-gradient(170deg,#0f1610,#05070a); }
+.ph-14{ background: radial-gradient(90% 70% at 80% 80%, #2c2c52 0%, transparent 60%), linear-gradient(200deg,#11122a,#05060a); }
+.ph-15{ background: radial-gradient(100% 90% at 50% 10%, #503a24 0%, transparent 55%), linear-gradient(180deg,#1c150c,#06070a); }
+.ph-16{ background: radial-gradient(80% 60% at 25% 60%, #2a4540 0%, transparent 60%), linear-gradient(200deg,#0e1a18,#05070a); }
+
+/* a soft scanline + glow shared across all plates for cohesion */
+.g-photo.ph-01,.g-photo.ph-02,.g-photo.ph-03,.g-photo.ph-04,.g-photo.ph-05,.g-photo.ph-06,
+.g-photo.ph-07,.g-photo.ph-08,.g-photo.ph-09,.g-photo.ph-10,.g-photo.ph-11,.g-photo.ph-12,
+.g-photo.ph-13,.g-photo.ph-14,.g-photo.ph-15,.g-photo.ph-16{
+  box-shadow: inset 0 0 80px rgba(0,0,0,.5);
+}
+
+/* light-trail streak accents layered on every plate, varied by position */
+.g-photo::before{
+  content:''; position:absolute; inset:0; opacity:.5; mix-blend-mode:screen;
+  background: linear-gradient(100deg, transparent 40%, rgba(95,232,255,.5) 49%, rgba(180,139,255,.4) 51%, transparent 60%);
+  background-size: 200% 200%;
+  background-position: 80% 20%;
+}
+.g-item:nth-child(2n) .g-photo::before{ background-position: 20% 70%; opacity:.35; }
+.g-item:nth-child(3n) .g-photo::before{ background-position: 60% 90%; opacity:.4; }
+.g-item:nth-child(4n) .g-photo::before{ opacity:.25; }
+.product-media .g-photo::before{ opacity:.3; }
+
+/* standard pointer cursor on every clickable control, now that the
+   custom cursor has been removed and the native one is back */
+a, button, .btn, .pill, .opt, .g-item, [role="button"],
+.cart-btn, .burger, .add-cart, .product-quick button, .lb-arrow, .lb-close,
+.checkout-close, .cart-remove, .magnetic{
+  cursor: pointer;
+}
+</style>
+</head><body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- LOADER -->
+<div class="loader" id="loader" role="status" aria-label="Loading">
+  <div class="loader-mark">
+    <svg viewBox="0 0 100 100" fill="none">
+      <circle cx="50" cy="50" r="48" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+      <g id="loaderBlades" stroke="#f3f5fa" stroke-width="1.2">
+        <path class="loader-blade" d="M50 50 L50 6" />
+        <path class="loader-blade" d="M50 50 L84 28" />
+        <path class="loader-blade" d="M50 50 L84 72" />
+        <path class="loader-blade" d="M50 50 L50 94" />
+        <path class="loader-blade" d="M50 50 L16 72" />
+        <path class="loader-blade" d="M50 50 L16 28" />
+      </g>
+    </svg>
+  </div>
+  <div class="loader-bar"><i id="loaderFill"></i></div>
+  <div class="loader-pct"><span id="loaderPct">00</span>% — OPENING APERTURE</div>
+</div>
+
+<!-- NAV -->
+<header class="nav" id="siteNav">
+  <div class="wrap">
+    <a href="#hero" class="brand">
+      <svg class="brand-mark" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.2"/><circle cx="12" cy="12" r="3.2" fill="#f3f5fa" stroke="none"/></svg>
+      <span>NOCTURNE<small>STUDIO &amp; EDITIONS</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="nav-link" href="#gallery">Gallery</a>
+      <a class="nav-link" href="#process">Process</a>
+      <a class="nav-link" href="#editions">Editions</a>
+      <a class="nav-link" href="#studio">Studio</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="cart-btn magnetic" id="cartOpenBtn" aria-label="Open cart">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 4h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="9" cy="20" r="1.4" fill="currentColor" stroke="none"/><circle cx="17" cy="20" r="1.4" fill="currentColor" stroke="none"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+        <i></i><i></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#gallery" class="m-link">Gallery</a>
+  <a href="#process" class="m-link">Process</a>
+  <a href="#editions" class="m-link">Editions</a>
+  <a href="#studio" class="m-link">Studio</a>
+  <a href="#contact" class="m-link">Contact</a>
+</div>
+
+<main id="main">
+<!-- HERO -->
+<section class="hero" id="hero">
+  <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-content wrap">
+    <div class="hero-top">
+      <span class="eyebrow">Night Photography Studio — Est. 2014</span>
+      <span class="exif">35MM — F/1.4 — 1/30S — ISO 1600</span>
+    </div>
+    <h1 class="hero-headline title-xl" aria-label="We shoot the city after the light goes down">
+      <span class="line"><span>We shoot the city</span></span>
+      <span class="line"><span>after the light</span></span>
+      <span class="line"><span>goes <em>down.</em></span></span>
+    </h1>
+    <div class="hero-sub-row">
+      <p class="lede" data-reveal>An independent studio capturing long‑exposure cityscapes, portraiture, and motion after dark — and printing the results as limited fine‑art editions, shipped worldwide.</p>
+      <div class="hero-actions" data-reveal>
+        <a href="#gallery" class="btn btn-primary magnetic"><span class="liquid"></span><span>View the gallery</span></a>
+        <a href="#editions" class="btn btn-ghost magnetic"><span>Shop editions</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">
+    <span>SCROLL</span>
+    <div class="line"><i></i></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <span><b>Cityscape</b> · Portrait · Motion · Architecture · Abstract · Long Exposure · <b>Cityscape</b> · Portrait · Motion · Architecture · Abstract · Long Exposure</span>
+    <span><b>Cityscape</b> · Portrait · Motion · Architecture · Abstract · Long Exposure · <b>Cityscape</b> · Portrait · Motion · Architecture · Abstract · Long Exposure</span>
+  </div>
+</div>
+<!-- GALLERY -->
+<section class="section" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow" data-reveal>Selected Work</span>
+        <h2 class="title-lg" style="margin-top:18px;" data-reveal>The <em>after‑dark</em> archive.</h2>
+      </div>
+      <p class="lede" data-reveal>Sixteen frames from a decade spent chasing light after the sun gives up. Filter by discipline, or wander through all of it.</p>
+    </div>
+
+    <div class="filter-row" id="filterRow" data-reveal-stagger>
+      <button class="pill is-active" data-filter="all">All Work</button>
+      <button class="pill" data-filter="cityscape">Cityscape</button>
+      <button class="pill" data-filter="portrait">Portrait</button>
+      <button class="pill" data-filter="motion">Motion</button>
+      <button class="pill" data-filter="architecture">Architecture</button>
+      <button class="pill" data-filter="abstract">Abstract</button>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid" style="margin-top:40px;">
+      <!-- items injected by JS from galleryData, first 12 rendered server-side for no-js fallback -->
+    </div>
+
+    <div class="grid-skeleton" id="gridSkeleton" style="display:none;">
+      <div class="skel"></div><div class="skel"></div><div class="skel"></div><div class="skel"></div>
+    </div>
+
+    <div class="gallery-footer">
+      <button class="btn btn-ghost magnetic" id="loadMoreBtn"><span>Load more frames</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow" data-reveal>How a Print Gets Made</span>
+        <h2 class="title-lg" style="margin-top:18px;" data-reveal>Behind the <em>lens.</em></h2>
+      </div>
+      <p class="lede" data-reveal>Four real stages between an empty street at 2am and a numbered print on your wall.</p>
+    </div>
+  </div>
+  <div class="process-scroll" id="processScroll">
+    <div class="wrap process-pin">
+      <div class="process-row">
+        <div class="process-steps" id="processSteps">
+          <div class="p-step is-active" data-step="0">
+            <span class="p-num">01</span>
+            <div class="p-body">
+              <h3>Scout</h3>
+              <p>Locations are walked at night, weeks ahead — checking sightlines, traffic flow, and how artificial light pools against architecture.</p>
+            </div>
+          </div>
+          <div class="p-step" data-step="1">
+            <span class="p-num">02</span>
+            <div class="p-body">
+              <h3>Expose</h3>
+              <p>Long exposures from 8 to 90 seconds on a locked tripod, often shot across several hours to catch the right traffic and sky.</p>
+            </div>
+          </div>
+          <div class="p-step" data-step="2">
+            <span class="p-num">03</span>
+            <div class="p-body">
+              <h3>Develop</h3>
+              <p>Each frame is graded by hand for tone and colour — no presets — to preserve the way the light actually felt that night.</p>
+            </div>
+          </div>
+          <div class="p-step" data-step="3">
+            <span class="p-num">04</span>
+            <div class="p-body">
+              <h3>Edition</h3>
+              <p>Approved frames are released as small numbered editions, archival‑printed and signed before they ship.</p>
+            </div>
+          </div>
+        </div>
+        <div class="process-visual" id="processVisual">
+          <div class="g-photo ph-06 is-active"></div>
+          <div class="g-photo ph-11"></div>
+          <div class="g-photo ph-09"></div>
+          <div class="g-photo ph-14"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- STORE / EDITIONS -->
+<section class="section" id="editions">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow" data-reveal>Limited Editions</span>
+        <h2 class="title-lg" style="margin-top:18px;" data-reveal>Own a <em>frame.</em></h2>
+      </div>
+      <p class="lede" data-reveal>Archival pigment prints, hand‑numbered and signed. Every edition is capped — once it's gone, the run is closed for good.</p>
+    </div>
+
+    <div class="store-grid" id="storeGrid">
+
+      <article class="product" data-reveal data-id="p1" data-title="Glass Canyon" data-base="340">
+        <div class="product-media">
+          <div class="g-photo ph-01 base"></div>
+          <div class="g-photo ph-06 alt"></div>
+          <span class="product-edition">Edition of 25</span>
+          <div class="product-quick">
+            <button class="pill btn-sm" data-action="preview">Preview</button>
+            <button class="pill btn-sm" data-action="save" aria-pressed="false" aria-label="Save to wishlist">♡ Save</button>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-row"><h3>Glass Canyon</h3><span class="product-price" data-price>$340</span></div>
+          <p class="product-desc">Downtown towers traced in their own reflected light. 24mm, f/2.8, 30s exposure.</p>
+          <div class="opt-row" data-opt="size">
+            <button class="opt is-selected" data-value="S" data-delta="0">S — 16×20</button>
+            <button class="opt" data-value="M" data-delta="60">M — 24×30</button>
+            <button class="opt" data-value="L" data-delta="140">L — 32×40</button>
+          </div>
+          <div class="opt-row" data-opt="frame">
+            <button class="opt is-selected" data-value="Unframed" data-delta="0">Unframed</button>
+            <button class="opt" data-value="Walnut" data-delta="90">Walnut</button>
+            <button class="opt" data-value="Black Ash" data-delta="90">Black Ash</button>
+          </div>
+          <button class="add-cart magnetic"><span class="liquid"></span><span>Add to cart — <b data-price-inline>$340</b></span></button>
+        </div>
+      </article>
+
+      <article class="product" data-reveal data-id="p2" data-title="Neon Exhale" data-base="310">
+        <div class="product-media">
+          <div class="g-photo ph-02 base"></div>
+          <div class="g-photo ph-14 alt"></div>
+          <span class="product-edition">Edition of 30</span>
+          <div class="product-quick">
+            <button class="pill btn-sm" data-action="preview">Preview</button>
+            <button class="pill btn-sm" data-action="save" aria-pressed="false" aria-label="Save to wishlist">♡ Save</button>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-row"><h3>Neon Exhale</h3><span class="product-price" data-price>$310</span></div>
+          <p class="product-desc">Steam and signage over a sleeping intersection. 28mm, f/2.8, 8s exposure.</p>
+          <div class="opt-row" data-opt="size">
+            <button class="opt is-selected" data-value="S" data-delta="0">S — 16×20</button>
+            <button class="opt" data-value="M" data-delta="60">M — 24×30</button>
+            <button class="opt" data-value="L" data-delta="140">L — 32×40</button>
+          </div>
+          <div class="opt-row" data-opt="frame">
+            <button class="opt is-selected" data-value="Unframed" data-delta="0">Unframed</button>
+            <button class="opt" data-value="Walnut" data-delta="90">Walnut</button>
+            <button class="opt" data-value="Black Ash" data-delta="90">Black Ash</button>
+          </div>
+          <button class="add-cart magnetic"><span class="liquid"></span><span>Add to cart — <b data-price-inline>$310</b></span></button>
+        </div>
+      </article>
+
+      <article class="product" data-reveal data-id="p3" data-title="Last Train" data-base="380">
+        <div class="product-media">
+          <div class="g-photo ph-03 base"></div>
+          <div class="g-photo ph-09 alt"></div>
+          <span class="product-edition">Edition of 20</span>
+          <div class="product-quick">
+            <button class="pill btn-sm" data-action="preview">Preview</button>
+            <button class="pill btn-sm" data-action="save" aria-pressed="false" aria-label="Save to wishlist">♡ Save</button>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-row"><h3>Last Train</h3><span class="product-price" data-price>$380</span></div>
+          <p class="product-desc">A platform light‑trail, shot from the last car. 35mm, f/2, 1/15s panned.</p>
+          <div class="opt-row" data-opt="size">
+            <button class="opt is-selected" data-value="S" data-delta="0">S — 16×20</button>
+            <button class="opt" data-value="M" data-delta="60">M — 24×30</button>
+            <button class="opt" data-value="L" data-delta="140">L — 32×40</button>
+          </div>
+          <div class="opt-row" data-opt="frame">
+            <button class="opt is-selected" data-value="Unframed" data-delta="0">Unframed</button>
+            <button class="opt" data-value="Walnut" data-delta="90">Walnut</button>
+            <button class="opt" data-value="Black Ash" data-delta="90">Black Ash</button>
+          </div>
+          <button class="add-cart magnetic"><span class="liquid"></span><span>Add to cart — <b data-price-inline>$380</b></span></button>
+        </div>
+      </article>
+
+      <article class="product" data-reveal data-id="p4" data-title="Concrete Tide" data-base="340">
+        <div class="product-media">
+          <div class="g-photo ph-04 base"></div>
+          <div class="g-photo ph-08 alt"></div>
+          <span class="product-edition">Edition of 25</span>
+          <div class="product-quick">
+            <button class="pill btn-sm" data-action="preview">Preview</button>
+            <button class="pill btn-sm" data-action="save" aria-pressed="false" aria-label="Save to wishlist">♡ Save</button>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-row"><h3>Concrete Tide</h3><span class="product-price" data-price>$340</span></div>
+          <p class="product-desc">A car park's stairwell, lit like a chapel. 16mm, f/4, 20s exposure.</p>
+          <div class="opt-row" data-opt="size">
+            <button class="opt is-selected" data-value="S" data-delta="0">S — 16×20</button>
+            <button class="opt" data-value="M" data-delta="60">M — 24×30</button>
+            <button class="opt" data-value="L" data-delta="140">L — 32×40</button>
+          </div>
+          <div class="opt-row" data-opt="frame">
+            <button class="opt is-selected" data-value="Unframed" data-delta="0">Unframed</button>
+            <button class="opt" data-value="Walnut" data-delta="90">Walnut</button>
+            <button class="opt" data-value="Black Ash" data-delta="90">Black Ash</button>
+          </div>
+          <button class="add-cart magnetic"><span class="liquid"></span><span>Add to cart — <b data-price-inline>$340</b></span></button>
+        </div>
+      </article>
+
+      <article class="product" data-reveal data-id="p5" data-title="Halflight" data-base="295">
+        <div class="product-media">
+          <div class="g-photo ph-07 base"></div>
+          <div class="g-photo ph-15 alt"></div>
+          <span class="product-edition">Edition of 35</span>
+          <div class="product-quick">
+            <button class="pill btn-sm" data-action="preview">Preview</button>
+            <button class="pill btn-sm" data-action="save" aria-pressed="false" aria-label="Save to wishlist">♡ Save</button>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-row"><h3>Halflight</h3><span class="product-price" data-price>$295</span></div>
+          <p class="product-desc">A portrait lit only by a vending machine. 85mm, f/1.4, 1/200s.</p>
+          <div class="opt-row" data-opt="size">
+            <button class="opt is-selected" data-value="S" data-delta="0">S — 16×20</button>
+            <button class="opt" data-value="M" data-delta="60">M — 24×30</button>
+            <button class="opt" data-value="L" data-delta="140">L — 32×40</button>
+          </div>
+          <div class="opt-row" data-opt="frame">
+            <button class="opt is-selected" data-value="Unframed" data-delta="0">Unframed</button>
+            <button class="opt" data-value="Walnut" data-delta="90">Walnut</button>
+            <button class="opt" data-value="Black Ash" data-delta="90">Black Ash</button>
+          </div>
+          <button class="add-cart magnetic"><span class="liquid"></span><span>Add to cart — <b data-price-inline>$295</b></span></button>
+        </div>
+      </article>
+
+      <article class="product" data-reveal data-id="p6" data-title="Skyline, Asleep" data-base="420">
+        <div class="product-media">
+          <div class="g-photo ph-11 base"></div>
+          <div class="g-photo ph-16 alt"></div>
+          <span class="product-edition">Edition of 15</span>
+          <div class="product-quick">
+            <button class="pill btn-sm" data-action="preview">Preview</button>
+            <button class="pill btn-sm" data-action="save" aria-pressed="false" aria-label="Save to wishlist">♡ Save</button>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-row"><h3>Skyline, Asleep</h3><span class="product-price" data-price>$420</span></div>
+          <p class="product-desc">The whole city, held still for thirty‑two seconds. 24mm, f/2.8, 32s.</p>
+          <div class="opt-row" data-opt="size">
+            <button class="opt is-selected" data-value="S" data-delta="0">S — 16×20</button>
+            <button class="opt" data-value="M" data-delta="60">M — 24×30</button>
+            <button class="opt" data-value="L" data-delta="140">L — 32×40</button>
+          </div>
+          <div class="opt-row" data-opt="frame">
+            <button class="opt is-selected" data-value="Unframed" data-delta="0">Unframed</button>
+            <button class="opt" data-value="Walnut" data-delta="90">Walnut</button>
+            <button class="opt" data-value="Black Ash" data-delta="90">Black Ash</button>
+          </div>
+          <button class="add-cart magnetic"><span class="liquid"></span><span>Add to cart — <b data-price-inline>$420</b></span></button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+<!-- STUDIO / ABOUT -->
+<section class="section" id="studio">
+  <div class="wrap">
+    <div class="process-row" style="grid-template-columns: 1fr 1fr; align-items:start;">
+      <div data-reveal>
+        <span class="eyebrow">The Studio</span>
+        <h2 class="title-lg" style="margin-top:18px;">One photographer. <br/><em>No daylight.</em></h2>
+      </div>
+      <div data-reveal>
+        <p class="lede" style="max-width:520px;">Nocturne started as a personal project in 2014 — a way to learn a city by walking it at 2am with a tripod. A decade on, it's a small studio: one photographer, one printer, and a standing rule that nothing gets shot before sunset.</p>
+        <p class="lede" style="max-width:520px; margin-top:18px;">Every print sold funds the next roll of film and the next sleepless night. Editions are intentionally small — when a run sells out, that frame doesn't come back.</p>
+        <div style="display:flex; gap:40px; margin-top:36px; flex-wrap:wrap;">
+          <div><div class="title-md">11</div><div class="exif">YEARS SHOOTING AFTER DARK</div></div>
+          <div><div class="title-md">214</div><div class="exif">EDITIONS RELEASED TO DATE</div></div>
+          <div><div class="title-md">38</div><div class="exif">CITIES DOCUMENTED</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS MARQUEE -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="press-track">
+    <span>Lumen Journal</span><span>Frame Magazine</span><span>Greyscale</span><span>After Hours Press</span><span>The Aperture Review</span><span>Nightshift Mag</span>
+    <span>Lumen Journal</span><span>Frame Magazine</span><span>Greyscale</span><span>After Hours Press</span><span>The Aperture Review</span><span>Nightshift Mag</span>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="section" style="padding-top:70px;">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow" data-reveal>Collectors</span>
+        <h2 class="title-lg" style="margin-top:18px;" data-reveal>What hangs on <em>their</em> walls.</h2>
+      </div>
+    </div>
+    <div class="quotes-grid">
+      <div class="quote-card glass" style="border-radius:14px;">
+        <p>"Skyline, Asleep" stopped guests mid-conversation at our opening — the kind of print that changes how a whole room feels.</p>
+        <div class="who"><span>Mara D.</span><span>Gallery Owner, Lisbon</span></div>
+      </div>
+      <div class="quote-card glass" style="border-radius:14px;">
+        <p>The framing options made it effortless. It arrived ready to hang and looked exactly like the preview — better, even.</p>
+        <div class="who"><span>Theo K.</span><span>Architect, Rotterdam</span></div>
+      </div>
+      <div class="quote-card glass" style="border-radius:14px;">
+        <p>I've bought three editions now. Each one sold out within weeks of release — worth setting a reminder.</p>
+        <div class="who"><span>Priya N.</span><span>Collector, Singapore</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="contact glass">
+      <div class="contact-glow" aria-hidden="true"></div>
+      <span class="eyebrow" style="justify-content:center;" data-reveal>Commissions &amp; Editorial</span>
+      <h2 class="title-lg" data-reveal>Let's make something <em>unforgettable</em> after the sun goes down.</h2>
+      <p class="lede" data-reveal>Open for private commissions, brand collaborations, and editorial night‑shoots — anywhere there's a skyline and a few hours of dark.</p>
+      <div class="contact-actions" data-reveal>
+        <a href="mailto:studio@nocturne.example" class="btn btn-primary magnetic"><span class="liquid"></span><span>Start a project</span></a>
+        <a href="#editions" class="btn btn-ghost magnetic"><span>Browse editions</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#hero" class="brand"><svg class="brand-mark" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.2"/><circle cx="12" cy="12" r="3.2" fill="#f3f5fa" stroke="none"/></svg><span>NOCTURNE</span></a>
+        <p>An independent night‑photography studio and fine‑art print shop, shooting cities, faces, and motion after the light goes down.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Sitemap</h5>
+        <a href="#gallery">Gallery</a>
+        <a href="#process">Process</a>
+        <a href="#editions">Editions</a>
+        <a href="#studio">Studio</a>
+      </div>
+      <div class="foot-col">
+        <h5>Editions</h5>
+        <a href="#editions">Shop all prints</a>
+        <a href="#editions">Framing guide</a>
+        <a href="#editions">Shipping &amp; care</a>
+      </div>
+      <div class="foot-col">
+        <h5>Studio</h5>
+        <a href="#contact">Commissions</a>
+        <a href="#contact">Press kit</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="exif">© 2026 NOCTURNE STUDIO — ALL RIGHTS RESERVED — F/8, GOLDEN HOUR</span>
+      <div class="social-row">
+        <a href="#">Instagram</a><a href="#">Behance</a><a href="#">Are.na</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="cart-head">
+    <h3>Your cart</h3>
+    <button class="lb-close" id="cartCloseBtn" aria-label="Close cart" style="position:static;">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <p class="cart-empty">Your cart is empty — find something worth printing in the gallery.</p>
+  </div>
+  <div class="cart-foot">
+    <div class="cart-subtotal"><span>Subtotal</span><b id="cartSubtotal">$0</b></div>
+    <button class="btn btn-primary magnetic" id="checkoutBtn" style="width:100%;"><span class="liquid"></span><span>Checkout</span></button>
+  </div>
+</aside>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lb-stage">
+    <button class="lb-close" id="lbCloseBtn" aria-label="Close viewer">✕</button>
+    <button class="lb-arrow prev" id="lbPrevBtn" aria-label="Previous image">←</button>
+    <button class="lb-arrow next" id="lbNextBtn" aria-label="Next image">→</button>
+    <div class="lb-photo g-photo" id="lbPhoto"></div>
+    <div class="lb-info">
+      <div>
+        <span class="g-cat" id="lbCat">CITYSCAPE</span>
+        <h3 class="title-md" id="lbTitle" style="margin-top:8px;">Title</h3>
+      </div>
+      <p class="lede" id="lbDesc" style="max-width:none;">—</p>
+      <div class="lb-exif-grid" id="lbExif"></div>
+      <div class="lb-nav">
+        <span class="exif" id="lbCounter">01 / 16</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CHECKOUT -->
+<div class="checkout-modal" id="checkoutModal">
+  <div class="checkout-card glass">
+    <button class="checkout-close" id="checkoutCloseBtn" aria-label="Close checkout">✕</button>
+    <div class="checkout-steps"><i><b id="coBar1"></b></i><i><b id="coBar2"></b></i></div>
+
+    <div class="co-pane is-active" data-pane="0">
+      <span class="eyebrow">Shipping details</span>
+      <div class="co-field"><label>Full name</label><input type="text" placeholder="Ada Lovelace" /></div>
+      <div class="co-field"><label>Email</label><input type="email" placeholder="ada@example.com" /></div>
+      <div class="co-row">
+        <div class="co-field" style="flex:1;"><label>City</label><input type="text" placeholder="Lisbon" /></div>
+        <div class="co-field" style="flex:1;"><label>Postal code</label><input type="text" placeholder="1000‑001" /></div>
+      </div>
+      <button class="btn btn-primary magnetic" id="coNext1" style="margin-top:10px;"><span class="liquid"></span><span>Continue to payment</span></button>
+    </div>
+
+    <div class="co-pane" data-pane="1">
+      <span class="eyebrow">Payment</span>
+      <div class="co-field"><label>Card number</label><input type="text" placeholder="4242 4242 4242 4242" /></div>
+      <div class="co-row">
+        <div class="co-field" style="flex:1;"><label>Expiry</label><input type="text" placeholder="12 / 29" /></div>
+        <div class="co-field" style="flex:1;"><label>CVC</label><input type="text" placeholder="123" /></div>
+      </div>
+      <button class="btn btn-primary magnetic" id="coNext2" style="margin-top:10px;"><span class="liquid"></span><span>Place order — <span id="coTotal">$0</span></span></button>
+    </div>
+
+    <div class="co-pane" data-pane="2">
+      <div class="co-success">
+        <div class="check">✓</div>
+        <h3 class="title-md">Order confirmed</h3>
+        <p class="lede" style="text-align:center;">Your editions will be numbered, signed, and packed within 3 business days. A confirmation has been sent to your inbox.</p>
+        <button class="btn btn-ghost magnetic" id="coDoneBtn"><span>Done</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lenis/1.1.13/lenis.min.js"></script>
+<script>
+/* =====================================================================
+   NOCTURNE — main.js (part 1: data, loader, cursor, nav, reveals)
+   ===================================================================== */
+(function(){
+  "use strict";
+
+  var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isTouch = window.matchMedia && window.matchMedia('(hover: none), (pointer: coarse)').matches;
+  var hasGSAP = typeof gsap !== 'undefined';
+  if (hasGSAP && typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
+
+  /* ---------------------------------------------------------------
+     GALLERY DATA
+  --------------------------------------------------------------- */
+  var GALLERY = [
+    { id:'g1', title:'Glass Canyon', cat:'cityscape', ph:'ph-01', focal:'24mm', ap:'f/2.8', sh:'30s', iso:'ISO 100', year:'2023', desc:'Downtown towers traced in their own reflected light, shot from a parking structure six storeys up.' },
+    { id:'g2', title:'Static Bloom', cat:'abstract', ph:'ph-02', focal:'85mm', ap:'f/1.8', sh:'1/500s', iso:'ISO 400', year:'2022', desc:'A close study of light scatter through wet glass — no props, no studio, just a bus shelter in the rain.' },
+    { id:'g3', title:'Last Train', cat:'motion', ph:'ph-03', focal:'35mm', ap:'f/2', sh:'1/15s', iso:'ISO 800', year:'2023', desc:'Panned from the final car of the night\'s last service, chasing the platform lights into a blur.' },
+    { id:'g4', title:'Marble Hour', cat:'portrait', ph:'ph-04', focal:'50mm', ap:'f/1.4', sh:'1/125s', iso:'ISO 200', year:'2024', desc:'A single sodium streetlamp doing the work of an entire lighting kit.' },
+    { id:'g5', title:'Concrete Tide', cat:'architecture', ph:'ph-05', focal:'16mm', ap:'f/4', sh:'20s', iso:'ISO 100', year:'2021', desc:'A car park stairwell, lit like a chapel by its own emergency signage.' },
+    { id:'g6', title:'Neon Exhale', cat:'cityscape', ph:'ph-06', focal:'28mm', ap:'f/2.8', sh:'8s', iso:'ISO 400', year:'2023', desc:'Steam from a kitchen vent caught mid-rise over a sleeping intersection.' },
+    { id:'g7', title:'Halflight', cat:'portrait', ph:'ph-07', focal:'85mm', ap:'f/1.4', sh:'1/200s', iso:'ISO 320', year:'2022', desc:'Lit entirely by a vending machine at 1am — the only thing still awake on the block.' },
+    { id:'g8', title:'Vertical Hold', cat:'architecture', ph:'ph-08', focal:'24mm', ap:'f/5.6', sh:'15s', iso:'ISO 100', year:'2024', desc:'A stairwell of mirrored glass, stacked until it loses its sense of scale.' },
+    { id:'g9', title:'Drift', cat:'motion', ph:'ph-09', focal:'35mm', ap:'f/2.2', sh:'1/8s', iso:'ISO 640', year:'2023', desc:'A cyclist crossing an empty intersection, the only moving thing for blocks.' },
+    { id:'g10', title:'Afterimage', cat:'abstract', ph:'ph-10', focal:'50mm', ap:'f/1.8', sh:'1/250s', iso:'ISO 200', year:'2022', desc:'Double exposure of a shop window and the street reflected back into it.' },
+    { id:'g11', title:'Low Tide District', cat:'cityscape', ph:'ph-11', focal:'21mm', ap:'f/3.2', sh:'25s', iso:'ISO 100', year:'2021', desc:'The harbour district at its quietest hour, water like polished stone.' },
+    { id:'g12', title:'Quiet Frequency', cat:'portrait', ph:'ph-12', focal:'90mm', ap:'f/1.6', sh:'1/160s', iso:'ISO 250', year:'2024', desc:'Between sets at a basement venue, lit by a single stage gel.' },
+    { id:'g13', title:'Steel Bloom', cat:'architecture', ph:'ph-13', focal:'17mm', ap:'f/4.5', sh:'18s', iso:'ISO 100', year:'2023', desc:'A footbridge\'s underside, photographed for its accidental symmetry.' },
+    { id:'g14', title:'Trace', cat:'motion', ph:'ph-14', focal:'35mm', ap:'f/2', sh:'1/10s', iso:'ISO 500', year:'2022', desc:'Taillights threading a roundabout, three exposures blended in‑camera.' },
+    { id:'g15', title:'Halation', cat:'abstract', ph:'ph-15', focal:'65mm', ap:'f/2', sh:'1/320s', iso:'ISO 320', year:'2024', desc:'Lens flare from a single streetlight, isolated against a black backdrop.' },
+    { id:'g16', title:'Skyline, Asleep', cat:'cityscape', ph:'ph-16', focal:'24mm', ap:'f/2.8', sh:'32s', iso:'ISO 100', year:'2023', desc:'The whole city, held still for thirty‑two seconds from a rooftop access door.' }
+  ];
+
+  var PH_CYCLE = ['ph-01','ph-02','ph-03','ph-04','ph-05','ph-06','ph-07','ph-08','ph-09','ph-10','ph-11','ph-12','ph-13','ph-14','ph-15','ph-16'];
+
+  /* ---------------------------------------------------------------
+     LOADER
+  --------------------------------------------------------------- */
+  function initLoader(done){
+    var loader = document.getElementById('loader');
+    var fill = document.getElementById('loaderFill');
+    var pct = document.getElementById('loaderPct');
+    var mark = document.querySelector('.loader-mark');
+    var blades = document.querySelectorAll('.loader-blade');
+    var p = 0;
+
+    blades.forEach(function(b,i){ b.style.transform = 'rotate(' + (i % 2 === 0 ? -18 : 14) + 'deg)'; });
+
+    var iv = setInterval(function(){
+      p += Math.random() * 14 + 6;
+      if (p >= 100){ p = 100; clearInterval(iv); }
+      fill.style.width = p + '%';
+      pct.textContent = String(Math.floor(p)).padStart(2,'0');
+      blades.forEach(function(b,i){
+        var open = p/100;
+        b.style.transform = 'rotate(' + ((i % 2 === 0 ? -18 : 14) * (1 - open)) + 'deg)';
+      });
+      if (p >= 100){
+        setTimeout(function(){
+          mark.style.transition = 'transform .6s cubic-bezier(.16,1,.3,1), opacity .6s';
+          mark.style.transform = 'scale(1.25)';
+          mark.style.opacity = '0';
+          loader.classList.add('is-done');
+          setTimeout(function(){ loader.style.display = 'none'; done && done(); }, 700);
+        }, 280);
+      }
+    }, reducedMotion ? 10 : 90);
+  }
+
+  /* ---------------------------------------------------------------
+     NAV / MOBILE MENU
+  --------------------------------------------------------------- */
+  function initNav(){
+    var nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', function(){
+      nav.classList.toggle('is-scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    var burger = document.getElementById('burgerBtn');
+    var menu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', function(){
+      var open = menu.classList.toggle('is-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        menu.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  /* ---------------------------------------------------------------
+     SCROLL REVEALS  (IntersectionObserver — robust w/ or w/o GSAP)
+  --------------------------------------------------------------- */
+  function initReveals(){
+    var targets = document.querySelectorAll('[data-reveal], [data-reveal-stagger]');
+    if (!('IntersectionObserver' in window)){
+      targets.forEach(function(t){ t.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    targets.forEach(function(t){ io.observe(t); });
+  }
+
+  /* ---------------------------------------------------------------
+     HERO TEXT REVEAL (post-loader)
+  --------------------------------------------------------------- */
+  function revealHero(){
+    var lines = document.querySelectorAll('.hero-headline .line span');
+    var els = [document.querySelector('.hero-top'), document.querySelectorAll('.hero-sub-row > *')];
+    if (hasGSAP){
+      var tl = gsap.timeline({ defaults:{ ease:'expo.out' } });
+      tl.to('.hero-top', { opacity:1, duration:.01 })
+        .to(lines, { y:0, duration:1.1, stagger:.12 }, 0.1)
+        .to('.hero-sub-row > *', { opacity:1, y:0, duration:.9, stagger:.12 }, 0.5);
+    } else {
+      lines.forEach(function(l,i){ setTimeout(function(){ l.style.transform = 'translateY(0)'; l.style.transition='transform .9s cubic-bezier(.16,1,.3,1)'; }, i*140); });
+      document.querySelectorAll('.hero-sub-row [data-reveal]').forEach(function(el,i){
+        setTimeout(function(){ el.classList.add('is-visible'); }, 600 + i*140);
+      });
+    }
+  }
+
+  window.NOCTURNE = window.NOCTURNE || {};
+  window.NOCTURNE.GALLERY = GALLERY;
+  window.NOCTURNE.PH_CYCLE = PH_CYCLE;
+  window.NOCTURNE.flags = { reducedMotion: reducedMotion, isTouch: isTouch, hasGSAP: hasGSAP };
+  window.NOCTURNE.initLoader = initLoader;
+  window.NOCTURNE.initNav = initNav;
+  window.NOCTURNE.initReveals = initReveals;
+  window.NOCTURNE.revealHero = revealHero;
+})();
+/* =====================================================================
+   NOCTURNE — main.js (part 2: gallery, filters, infinite scroll, lightbox)
+   ===================================================================== */
+(function(){
+  "use strict";
+  var N = window.NOCTURNE;
+  var GALLERY = N.GALLERY;
+  var grid = document.getElementById('galleryGrid');
+  var currentFilter = 'all';
+  var batchesShown = 1;       // how many "pages" of the archive have been appended
+  var MAX_BATCHES = 3;
+  var revealObserver;
+
+  function exifRow(item){
+    return '<div class="g-exif"><span>' + item.focal + '</span><span>' + item.ap + '</span><span>' + item.sh + '</span><span>' + item.iso + '</span></div>';
+  }
+
+  function buildItemEl(item, idx){
+    var el = document.createElement('div');
+    el.className = 'g-item';
+    el.setAttribute('data-category', item.cat);
+    el.setAttribute('tabindex', '0');
+    el.setAttribute('role', 'button');
+    el.setAttribute('aria-label', 'View ' + item.title + ', ' + item.cat + ' photograph');
+    el.dataset.title = item.title;
+    el.dataset.cat = item.cat;
+    el.dataset.desc = item.desc;
+    el.dataset.ph = item.ph;
+    el.dataset.focal = item.focal;
+    el.dataset.ap = item.ap;
+    el.dataset.sh = item.sh;
+    el.dataset.iso = item.iso;
+    el.dataset.year = item.year;
+
+    el.innerHTML =
+      '<div class="g-tilt">' +
+        '<div class="g-aspect">' +
+          '<div class="g-photo ' + item.ph + '"></div>' +
+          '<div class="g-shade"></div>' +
+          '<span class="g-frame-corner tl"></span><span class="g-frame-corner tr"></span>' +
+          '<div class="g-meta">' +
+            '<span class="g-cat">' + item.cat + '</span>' +
+            '<h3 class="g-title">' + item.title + '</h3>' +
+            exifRow(item) +
+          '</div>' +
+        '</div>' +
+      '</div>';
+
+    if (currentFilter !== 'all' && item.cat !== currentFilter) el.classList.add('is-hidden');
+
+    el.addEventListener('click', function(){ openLightboxFrom(el); });
+    el.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openLightboxFrom(el); }
+    });
+    revealObserver.observe(el);
+    initTilt(el.querySelector('.g-tilt'));
+    return el;
+  }
+
+  function renderBatch(){
+    // first batch = the real 16; subsequent batches are "studies" pulled from the
+    // same archive, reusing frames with a Roman-numeral study tag (still honest —
+    // explicitly labelled as alternates rather than pretending to be new shots).
+    var list = GALLERY;
+    var suffix = '';
+    if (batchesShown === 2) suffix = ' — Study II';
+    if (batchesShown === 3) suffix = ' — Study III';
+    list.forEach(function(item, i){
+      var clone = Object.assign({}, item, { title: item.title + suffix });
+      grid.appendChild(buildItemEl(clone, i));
+    });
+  }
+
+  function initGallery(){
+    revealObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    renderBatch();
+
+    document.getElementById('filterRow').addEventListener('click', function(e){
+      var btn = e.target.closest('.pill');
+      if (!btn) return;
+      document.querySelectorAll('#filterRow .pill').forEach(function(p){ p.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      currentFilter = btn.getAttribute('data-filter');
+      applyFilter();
+    });
+
+    var loadBtn = document.getElementById('loadMoreBtn');
+    var skeleton = document.getElementById('gridSkeleton');
+    function loadMore(){
+      if (batchesShown >= MAX_BATCHES){
+        loadBtn.innerHTML = '<span>You\u2019ve reached the end of the archive</span>';
+        loadBtn.disabled = true;
+        loadBtn.style.opacity = '.5';
+        return;
+      }
+      loadBtn.innerHTML = '<span>Loading\u2026</span>';
+      skeleton.style.display = 'grid';
+      setTimeout(function(){
+        batchesShown++;
+        renderBatch();
+        applyFilter();
+        skeleton.style.display = 'none';
+        loadBtn.innerHTML = batchesShown >= MAX_BATCHES
+          ? '<span>You\u2019ve reached the end of the archive</span>'
+          : '<span>Load more frames</span>';
+        if (batchesShown >= MAX_BATCHES){ loadBtn.disabled = true; loadBtn.style.opacity = '.5'; }
+      }, 650);
+    }
+    loadBtn.addEventListener('click', loadMore);
+
+    // true infinite-scroll: auto trigger once the button drifts into view
+    if ('IntersectionObserver' in window){
+      var autoIO = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting && batchesShown < MAX_BATCHES && !loadBtn.disabled) loadMore();
+        });
+      }, { threshold: 0.9 });
+      autoIO.observe(loadBtn);
+    }
+  }
+
+  function applyFilter(){
+    document.querySelectorAll('.g-item').forEach(function(el){
+      var match = currentFilter === 'all' || el.dataset.cat === currentFilter;
+      if (match){
+        el.classList.remove('is-hidden');
+        requestAnimationFrame(function(){ el.classList.add('is-visible'); });
+      } else {
+        el.classList.remove('is-visible');
+        setTimeout(function(){ el.classList.add('is-hidden'); }, 300);
+      }
+    });
+  }
+
+  /* ---------------------------------------------------------------
+     3D TILT
+  --------------------------------------------------------------- */
+  function initTilt(el){
+    if (N.flags.isTouch || N.flags.reducedMotion) return;
+    var rect, raf;
+    el.addEventListener('mousemove', function(e){
+      rect = el.getBoundingClientRect();
+      var px = (e.clientX - rect.left) / rect.width - 0.5;
+      var py = (e.clientY - rect.top) / rect.height - 0.5;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(function(){
+        el.style.transform = 'perspective(900px) rotateX(' + (py * -10) + 'deg) rotateY(' + (px * 12) + 'deg) scale3d(1.02,1.02,1.02)';
+      });
+    });
+    el.addEventListener('mouseleave', function(){
+      cancelAnimationFrame(raf);
+      el.style.transform = 'perspective(900px) rotateX(0) rotateY(0) scale3d(1,1,1)';
+    });
+  }
+
+  /* ---------------------------------------------------------------
+     LIGHTBOX
+  --------------------------------------------------------------- */
+  var lb = {
+    el: null, photo: null, cat: null, title: null, desc: null, exif: null, counter: null,
+    items: [], index: 0
+  };
+
+  function initLightbox(){
+    lb.el = document.getElementById('lightbox');
+    lb.photo = document.getElementById('lbPhoto');
+    lb.cat = document.getElementById('lbCat');
+    lb.title = document.getElementById('lbTitle');
+    lb.desc = document.getElementById('lbDesc');
+    lb.exif = document.getElementById('lbExif');
+    lb.counter = document.getElementById('lbCounter');
+
+    document.getElementById('lbCloseBtn').addEventListener('click', closeLightbox);
+    document.getElementById('lbPrevBtn').addEventListener('click', function(){ step(-1); });
+    document.getElementById('lbNextBtn').addEventListener('click', function(){ step(1); });
+    lb.el.addEventListener('click', function(e){ if (e.target === lb.el) closeLightbox(); });
+    document.addEventListener('keydown', function(e){
+      if (!lb.el.classList.contains('is-open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') step(-1);
+      if (e.key === 'ArrowRight') step(1);
+    });
+  }
+
+  function openLightboxFrom(el){
+    lb.items = Array.prototype.slice.call(document.querySelectorAll('.g-item')).filter(function(i){ return !i.classList.contains('is-hidden'); });
+    lb.index = lb.items.indexOf(el);
+    paintLightbox();
+    lb.el.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function step(dir){
+    lb.index = (lb.index + dir + lb.items.length) % lb.items.length;
+    paintLightbox();
+  }
+
+  function paintLightbox(){
+    var el = lb.items[lb.index];
+    if (!el) return;
+    var d = el.dataset;
+    lb.photo.className = 'lb-photo g-photo ' + d.ph;
+    lb.cat.textContent = d.cat;
+    lb.title.textContent = d.title;
+    lb.desc.textContent = d.desc;
+    lb.exif.innerHTML =
+      '<div><b>Focal Length</b><span>' + d.focal + '</span></div>' +
+      '<div><b>Aperture</b><span>' + d.ap + '</span></div>' +
+      '<div><b>Shutter</b><span>' + d.sh + '</span></div>' +
+      '<div><b>ISO / Year</b><span>' + d.iso + ' · ' + d.year + '</span></div>';
+    lb.counter.textContent = String(lb.index + 1).padStart(2,'0') + ' / ' + String(lb.items.length).padStart(2,'0');
+  }
+
+  function closeLightbox(){
+    lb.el.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  N.initGallery = initGallery;
+  N.initLightbox = initLightbox;
+})();
+/* =====================================================================
+   NOCTURNE — main.js (part 3: magnetic btns, store/cart, checkout,
+   process scroll-story, three.js hero particles)
+   ===================================================================== */
+(function(){
+  "use strict";
+  var N = window.NOCTURNE;
+
+  /* ---------------------------------------------------------------
+     MAGNETIC BUTTONS
+  --------------------------------------------------------------- */
+  function initMagnetic(){
+    if (N.flags.isTouch || N.flags.reducedMotion) return;
+    document.querySelectorAll('.magnetic').forEach(function(btn){
+      btn.addEventListener('mousemove', function(e){
+        var r = btn.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - 0.5;
+        var y = (e.clientY - r.top) / r.height - 0.5;
+        btn.style.transform = 'translate(' + (x * 14) + 'px,' + (y * 14) + 'px)';
+      });
+      btn.addEventListener('mouseleave', function(){ btn.style.transform = 'translate(0,0)'; });
+    });
+  }
+
+  /* ---------------------------------------------------------------
+     PROCESS — sticky scroll storytelling
+  --------------------------------------------------------------- */
+  function initProcess(){
+    var scrollEl = document.getElementById('processScroll');
+    var steps = document.querySelectorAll('.p-step');
+    var photos = document.querySelectorAll('#processVisual .g-photo');
+    if (!scrollEl) return;
+
+    function setActive(i){
+      steps.forEach(function(s,idx){ s.classList.toggle('is-active', idx === i); });
+      photos.forEach(function(p,idx){ p.classList.toggle('is-active', idx === i); });
+    }
+
+    steps.forEach(function(s){
+      s.addEventListener('click', function(){ setActive(parseInt(s.getAttribute('data-step'), 10)); });
+    });
+
+    window.addEventListener('scroll', function(){
+      var rect = scrollEl.getBoundingClientRect();
+      var total = rect.height - window.innerHeight;
+      if (total <= 0) return;
+      var progress = Math.min(Math.max(-rect.top / total, 0), 0.999);
+      setActive(Math.floor(progress * steps.length));
+    }, { passive: true });
+  }
+
+  /* ---------------------------------------------------------------
+     STORE / CART
+  --------------------------------------------------------------- */
+  var cart = [];
+
+  function fmt(n){ return '$' + n.toFixed(0); }
+
+  function initStoreOptions(){
+    document.querySelectorAll('.product').forEach(function(card){
+      card.querySelectorAll('[data-opt]').forEach(function(row){
+        row.addEventListener('click', function(e){
+          var btn = e.target.closest('.opt');
+          if (!btn) return;
+          row.querySelectorAll('.opt').forEach(function(o){ o.classList.remove('is-selected'); });
+          btn.classList.add('is-selected');
+          recalcPrice(card);
+        });
+      });
+      card.querySelector('.add-cart').addEventListener('click', function(e){
+        addProductToCart(card, e.currentTarget);
+      });
+      var saveBtn = card.querySelector('[data-action="save"]');
+      if (saveBtn) saveBtn.addEventListener('click', function(){
+        var pressed = saveBtn.getAttribute('aria-pressed') === 'true';
+        saveBtn.setAttribute('aria-pressed', pressed ? 'false' : 'true');
+        saveBtn.style.color = pressed ? '' : 'var(--champagne)';
+        saveBtn.style.borderColor = pressed ? '' : 'var(--champagne)';
+        saveBtn.textContent = pressed ? '♡ Save' : '♥ Saved';
+      });
+      var previewBtn = card.querySelector('[data-action="preview"]');
+      if (previewBtn) previewBtn.addEventListener('click', function(){
+        card.querySelector('.product-media').classList.toggle('is-locked-alt');
+        var base = card.querySelector('.g-photo.base');
+        var alt = card.querySelector('.g-photo.alt');
+        var showingAlt = alt.style.opacity === '1';
+        alt.style.opacity = showingAlt ? '' : '1';
+        base.style.opacity = showingAlt ? '' : '0';
+      });
+    });
+  }
+
+  function recalcPrice(card){
+    var base = parseInt(card.getAttribute('data-base'), 10);
+    var sizeDelta = parseInt(card.querySelector('[data-opt="size"] .is-selected').getAttribute('data-delta'), 10);
+    var frameDelta = parseInt(card.querySelector('[data-opt="frame"] .is-selected').getAttribute('data-delta'), 10);
+    var price = base + sizeDelta + frameDelta;
+    card.querySelector('[data-price]').textContent = fmt(price);
+    card.querySelector('[data-price-inline]').textContent = fmt(price);
+    return price;
+  }
+
+  function addProductToCart(card, btnEl){
+    var price = recalcPrice(card);
+    var size = card.querySelector('[data-opt="size"] .is-selected').getAttribute('data-value');
+    var frame = card.querySelector('[data-opt="frame"] .is-selected').getAttribute('data-value');
+    var title = card.getAttribute('data-title');
+    var ph = card.querySelector('.g-photo.base').className.match(/ph-\d+/)[0];
+    var key = card.getAttribute('data-id') + size + frame;
+
+    var existing = cart.find(function(c){ return c.key === key; });
+    if (existing){ existing.qty++; }
+    else { cart.push({ key:key, title:title, size:size, frame:frame, price:price, qty:1, ph:ph }); }
+
+    renderCart();
+    flyToCart(card.querySelector('.product-media'));
+
+    btnEl.classList.add('is-added');
+    var span = btnEl.querySelector('span');
+    var original = span.innerHTML;
+    setTimeout(function(){ btnEl.classList.remove('is-added'); }, 1400);
+  }
+
+  function flyToCart(mediaEl){
+    var cartBtn = document.getElementById('cartOpenBtn');
+    var r1 = mediaEl.getBoundingClientRect();
+    var r2 = cartBtn.getBoundingClientRect();
+    var ghost = document.createElement('div');
+    ghost.style.position = 'fixed';
+    ghost.style.left = r1.left + 'px';
+    ghost.style.top = r1.top + 'px';
+    ghost.style.width = r1.width + 'px';
+    ghost.style.height = r1.height + 'px';
+    ghost.style.borderRadius = '12px';
+    ghost.style.overflow = 'hidden';
+    ghost.style.zIndex = '3000';
+    ghost.style.pointerEvents = 'none';
+    ghost.style.background = getComputedStyle(mediaEl.querySelector('.g-photo')).backgroundColor;
+    ghost.className = 'g-photo ' + (mediaEl.querySelector('.g-photo.base').className.match(/ph-\d+/) || ['ph-01'])[0];
+    document.body.appendChild(ghost);
+    requestAnimationFrame(function(){
+      ghost.style.transition = 'all .75s cubic-bezier(.65,0,.35,1)';
+      ghost.style.left = r2.left + 'px';
+      ghost.style.top = r2.top + 'px';
+      ghost.style.width = '14px';
+      ghost.style.height = '14px';
+      ghost.style.opacity = '0.2';
+      ghost.style.borderRadius = '50%';
+    });
+    setTimeout(function(){ ghost.remove(); pulseCart(); }, 780);
+  }
+
+  function pulseCart(){
+    var btn = document.getElementById('cartOpenBtn');
+    btn.style.transition = 'transform .25s ease-out';
+    btn.style.transform = 'scale(1.18)';
+    setTimeout(function(){ btn.style.transform = ''; }, 250);
+  }
+
+  function renderCart(){
+    var wrap = document.getElementById('cartItems');
+    var countEl = document.getElementById('cartCount');
+    var subtotalEl = document.getElementById('cartSubtotal');
+    var totalQty = cart.reduce(function(s,c){ return s + c.qty; }, 0);
+    countEl.textContent = totalQty;
+
+    if (cart.length === 0){
+      wrap.innerHTML = '<p class="cart-empty">Your cart is empty — find something worth printing in the gallery.</p>';
+      subtotalEl.textContent = '$0';
+      return;
+    }
+    var subtotal = cart.reduce(function(s,c){ return s + c.price * c.qty; }, 0);
+    wrap.innerHTML = cart.map(function(c, i){
+      return '<div class="cart-line" data-key="' + c.key + '">' +
+        '<div class="cart-thumb g-photo ' + c.ph + '"></div>' +
+        '<div class="cart-line-body">' +
+          '<h4>' + c.title + '</h4>' +
+          '<span class="cart-line-meta">' + c.size + ' \u00B7 ' + c.frame + ' \u00B7 Qty ' + c.qty + '</span>' +
+          '<div class="cart-line-foot"><button class="cart-remove" data-remove="' + c.key + '">Remove</button><span>' + fmt(c.price * c.qty) + '</span></div>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+    subtotalEl.textContent = fmt(subtotal);
+
+    wrap.querySelectorAll('[data-remove]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        cart = cart.filter(function(c){ return c.key !== btn.getAttribute('data-remove'); });
+        renderCart();
+      });
+    });
+  }
+
+  function initCartUI(){
+    var overlay = document.getElementById('cartOverlay');
+    var drawer = document.getElementById('cartDrawer');
+    function open(){ overlay.classList.add('is-open'); drawer.classList.add('is-open'); }
+    function close(){ overlay.classList.remove('is-open'); drawer.classList.remove('is-open'); }
+    document.getElementById('cartOpenBtn').addEventListener('click', open);
+    document.getElementById('cartCloseBtn').addEventListener('click', close);
+    overlay.addEventListener('click', close);
+    document.getElementById('checkoutBtn').addEventListener('click', function(){
+      if (cart.length === 0) return;
+      close();
+      openCheckout();
+    });
+  }
+
+  /* ---------------------------------------------------------------
+     CHECKOUT
+  --------------------------------------------------------------- */
+  function initCheckout(){
+    var modal = document.getElementById('checkoutModal');
+    var panes = modal.querySelectorAll('.co-pane');
+    var bar1 = document.getElementById('coBar1');
+    var bar2 = document.getElementById('coBar2');
+
+    function showPane(i){
+      panes.forEach(function(p,idx){ p.classList.toggle('is-active', idx === i); });
+      bar1.style.width = i >= 0 ? '100%' : '0%';
+      bar2.style.width = i >= 1 ? '100%' : '0%';
+    }
+
+    document.getElementById('coNext1').addEventListener('click', function(){ showPane(1); });
+    document.getElementById('coNext2').addEventListener('click', function(){
+      showPane(2);
+      cart = [];
+      renderCart();
+    });
+    document.getElementById('checkoutCloseBtn').addEventListener('click', closeCheckout);
+    document.getElementById('coDoneBtn').addEventListener('click', function(){ closeCheckout(); showPane(0); });
+    modal.addEventListener('click', function(e){ if (e.target === modal) closeCheckout(); });
+
+    window.NOCTURNE._openCheckout = function(){
+      var subtotal = document.getElementById('cartSubtotal').textContent;
+      document.getElementById('coTotal').textContent = subtotal;
+      showPane(0);
+      modal.classList.add('is-open');
+    };
+  }
+  function openCheckout(){ window.NOCTURNE._openCheckout(); }
+  function closeCheckout(){ document.getElementById('checkoutModal').classList.remove('is-open'); }
+
+  /* ---------------------------------------------------------------
+     THREE.JS HERO PARTICLES
+  --------------------------------------------------------------- */
+  function initHeroScene(){
+    var canvas = document.getElementById('heroCanvas');
+    if (!canvas || typeof THREE === 'undefined') return;
+    var hero = document.getElementById('hero');
+
+    var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(55, 1, 0.1, 100);
+    camera.position.z = 12;
+
+    var COUNT = N.flags.reducedMotion ? 0 : (innerWidth < 760 ? 280 : 650);
+    var positions = new Float32Array(COUNT * 3);
+    var colors = new Float32Array(COUNT * 3);
+    var palette = [[0.37,0.91,1.0], [0.70,0.55,1.0], [0.95,0.95,0.98]];
+    for (var i = 0; i < COUNT; i++){
+      positions[i*3]   = (Math.random() - 0.5) * 26;
+      positions[i*3+1] = (Math.random() - 0.5) * 14;
+      positions[i*3+2] = (Math.random() - 0.5) * 18;
+      var c = palette[Math.floor(Math.random() * palette.length)];
+      colors[i*3] = c[0]; colors[i*3+1] = c[1]; colors[i*3+2] = c[2];
+    }
+    var geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    var mat = new THREE.PointsMaterial({ size: 0.06, vertexColors: true, transparent: true, opacity: 0.85, blending: THREE.AdditiveBlending, depthWrite: false });
+    var points = new THREE.Points(geo, mat);
+    scene.add(points);
+
+    var mouseX = 0, mouseY = 0;
+    window.addEventListener('mousemove', function(e){
+      mouseX = (e.clientX / innerWidth - 0.5);
+      mouseY = (e.clientY / innerHeight - 0.5);
+    });
+
+    function resize(){
+      var w = hero.clientWidth, h = hero.clientHeight;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    var clock = new THREE.Clock();
+    var visible = true;
+    document.addEventListener('visibilitychange', function(){ visible = !document.hidden; });
+
+    function animate(){
+      requestAnimationFrame(animate);
+      if (!visible) return;
+      var t = clock.getElapsedTime();
+      points.rotation.y = t * 0.02 + mouseX * 0.25;
+      points.rotation.x = mouseY * 0.15;
+      camera.position.x += (mouseX * 1.4 - camera.position.x) * 0.03;
+      camera.position.y += (-mouseY * 1.0 - camera.position.y) * 0.03;
+      camera.lookAt(0,0,0);
+      renderer.render(scene, camera);
+    }
+    animate();
+  }
+
+  N.initMagnetic = initMagnetic;
+  N.initProcess = initProcess;
+  N.initStoreOptions = initStoreOptions;
+  N.initCartUI = initCartUI;
+  N.initCheckout = initCheckout;
+  N.initHeroScene = initHeroScene;
+})();
+/* =====================================================================
+   NOCTURNE — main.js (part 4: smooth scroll + parallax + boot sequence)
+   ===================================================================== */
+(function(){
+  "use strict";
+  var N = window.NOCTURNE;
+
+  /* ---------------------------------------------------------------
+     SMOOTH SCROLL — Lenis if it loaded from CDN, native otherwise.
+     Either way the page is fully usable; this only adds the inertia feel.
+  --------------------------------------------------------------- */
+  function initSmoothScroll(){
+    if (N.flags.reducedMotion) return;
+    if (typeof Lenis !== 'undefined'){
+      try {
+        var lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+        function raf(time){ lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+        if (N.flags.hasGSAP && typeof ScrollTrigger !== 'undefined'){
+          lenis.on('scroll', ScrollTrigger.update);
+        }
+        // keep in-page anchors working with Lenis
+        document.querySelectorAll('a[href^="#"]').forEach(function(a){
+          a.addEventListener('click', function(e){
+            var id = a.getAttribute('href');
+            if (id.length > 1 && document.querySelector(id)){
+              e.preventDefault();
+              lenis.scrollTo(id, { offset: -70 });
+            }
+          });
+        });
+        return;
+      } catch(err){ /* fall through to native */ }
+    }
+    document.documentElement.style.scrollBehavior = 'smooth';
+  }
+
+  /* ---------------------------------------------------------------
+     HERO PARALLAX LAYERS
+  --------------------------------------------------------------- */
+  function initParallax(){
+    if (N.flags.reducedMotion) return;
+    var content = document.querySelector('.hero-content');
+    var canvas = document.getElementById('heroCanvas');
+    window.addEventListener('scroll', function(){
+      var y = window.scrollY;
+      if (y < window.innerHeight){
+        content.style.transform = 'translateY(' + (y * 0.25) + 'px)';
+        content.style.opacity = String(Math.max(1 - y / (window.innerHeight * 0.8), 0));
+        canvas.style.transform = 'translateY(' + (y * 0.12) + 'px)';
+      }
+    }, { passive: true });
+  }
+
+  /* ---------------------------------------------------------------
+     BOOT
+  --------------------------------------------------------------- */
+  function boot(){
+    N.initNav();
+    N.initReveals();
+    N.initGallery();
+    N.initLightbox();
+    N.initMagnetic();
+    N.initProcess();
+    N.initStoreOptions();
+    N.initCartUI();
+    N.initCheckout();
+    N.initHeroScene();
+    initSmoothScroll();
+    initParallax();
+  }
+
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){
+      boot();
+      N.initLoader(N.revealHero);
+    });
+  } else {
+    boot();
+    N.initLoader(N.revealHero);
+  }
+})();
+</script>
+</body></html>
